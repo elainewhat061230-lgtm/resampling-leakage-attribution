@@ -1,0 +1,4 @@
+# Store every file byte-for-byte: no line-ending conversion on commit or checkout, on any
+# operating system. Clones then reproduce the published outputs exactly (see README,
+# "What to expect after a rebuild"). All text files in this repository use LF line endings.
+* -text

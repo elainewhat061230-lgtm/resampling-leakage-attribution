@@ -1,0 +1,11 @@
+Metric	Model class	Mean total inflation T	T range across datasets	L (training-side leakage)	S (synthetic-test mixture)	P (prevalence)	Comparability
+ROC-AUC	Linear (LogReg)	+0.0165	+0.0064 to +0.0498	+0.0066	+0.0098	+0.0000 n.e.	Not correctable: training-side leakage and synthetic-test mixture both contribute
+ROC-AUC	Flexible (DT/RF/XGB)	+0.0780	+0.0271 to +0.1482	+0.0263	+0.0517	+0.0000 n.e.	Not correctable: training-side leakage and synthetic-test mixture both contribute
+AUPRC	Linear (LogReg)	+0.1877	+0.0949 to +0.3431	+0.0072	+0.0023 n.e.	+0.1781	Not correctable: depends on the original class ratio
+AUPRC	Flexible (DT/RF/XGB)	+0.2719	+0.1475 to +0.4209	+0.0492	+0.1284	+0.0944	Not correctable: depends on the original class ratio
+F1	Linear (LogReg)	+0.2015	+0.0762 to +0.3116	+0.0070	+0.0113	+0.1832	Not correctable: depends on the original class ratio
+F1	Flexible (DT/RF/XGB)	+0.2431	+0.1415 to +0.3484	+0.0381	+0.0787	+0.1264	Not correctable: depends on the original class ratio
+Accuracy	Linear (LogReg)	+0.0048	-0.0285 to +0.0404	+0.0031 n.e.	+0.0048	-0.0031 n.e.	Not correctable: depends on the original class ratio
+Accuracy	Flexible (DT/RF/XGB)	+0.0405	+0.0017 to +0.0711	+0.0091	+0.0297	+0.0017 n.e.	Not correctable: depends on the original class ratio
+Precision	Linear (LogReg)	+0.3039	+0.1328 to +0.4887	+0.0041 n.e.	+0.0066	+0.2932	Not correctable: depends on the original class ratio
+Precision	Flexible (DT/RF/XGB)	+0.2670	+0.1560 to +0.3926	+0.0131	+0.0417	+0.2122	Not correctable: depends on the original class ratio

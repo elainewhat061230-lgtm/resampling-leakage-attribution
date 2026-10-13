@@ -1,0 +1,3 @@
+Metric	Protocol-induced flip (CON vs LMB)	Seed-noise baseline (this study)	Seed-noise baseline (Roth 2026)	Metric-choice flip (Roth 2026)	Ratio to own baseline
+ROC-AUC	53.5% (289/540)	8.6% (7830 pairs)	10.4%	31.0% (six metrics pooled)	6.3x
+F1	58.9% (318/540)	21.6% (7830 pairs)	n/a (ROC-AUC only)	31.0% (six metrics pooled)	2.7x

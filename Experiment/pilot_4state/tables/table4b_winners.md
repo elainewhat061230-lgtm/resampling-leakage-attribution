@@ -1,0 +1,8 @@
+**Table 4b. Distribution of the selected best model, ROC-AUC, 10 cells.**
+
+| Model        |   Wins under correct protocol (CON) | Wins under correct protocol (CON), %   |   Wins under as-published endpoint (LMB) | Wins under as-published endpoint (LMB), %   |
+|:-------------|------------------------------------:|:---------------------------------------|-----------------------------------------:|:--------------------------------------------|
+| LogReg       |                                   0 | 0.0%                                   |                                        0 | 0.0%                                        |
+| DecisionTree |                                   0 | 0.0%                                   |                                        0 | 0.0%                                        |
+| RandomForest |                                  10 | 100.0%                                 |                                       10 | 100.0%                                      |
+| XGBoost      |                                   0 | 0.0%                                   |                                        0 | 0.0%                                        |

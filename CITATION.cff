@@ -1,0 +1,41 @@
+# Citation metadata for this repository (Citation File Format 1.2.0).
+# Author, repository and preferred-citation details confirmed on 2026-10-08.
+cff-version: 1.2.0
+message: "If you use this code or these data, please cite the preprint given under preferred-citation."
+type: software
+title: "Code and data for: Decomposing the Performance Gains of Pre-Split Resampling in Imbalanced Credit Risk Modelling"
+authors:
+  - family-names: "Xiao"
+    given-names: "Yixuan"
+    orcid: "https://orcid.org/0009-0007-5349-1199"
+    affiliation: "Diablo Valley College, Pleasant Hill, United States"
+abstract: >-
+  Code, per-fold outputs and derived results for the preprint "Decomposing the Performance
+  Gains of Pre-Split Resampling in Imbalanced Credit Risk Modelling". The analysis decomposes
+  the gap between resampling after and before the
+  train-test split into training-side leakage, synthetic-test mixture and prevalence
+  contributions that add up exactly to the total in every fold, across six OpenML datasets,
+  four models, three resamplers and 30 seeds.
+version: 1.0.0
+license: MIT
+repository-code: "https://github.com/elainewhat061230-lgtm/resampling-leakage-attribution"
+keywords:
+  - class imbalance
+  - data leakage
+  - SMOTE
+  - evaluation protocol
+  - model selection
+  - credit risk
+preferred-citation:
+  type: article
+  status: preprint
+  title: "Decomposing the Performance Gains of Pre-Split Resampling in Imbalanced Credit Risk Modelling"
+  authors:
+    - family-names: "Xiao"
+      given-names: "Yixuan"
+      orcid: "https://orcid.org/0009-0007-5349-1199"
+      affiliation: "Diablo Valley College, Pleasant Hill, United States"
+  doi: "10.5281/zenodo.23232311"
+  year: 2026
+  publisher:
+    name: "Zenodo"

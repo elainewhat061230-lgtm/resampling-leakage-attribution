@@ -1,0 +1,6 @@
+**Table 4. Protocol choice changes which model is selected as best. Baselines are reported alongside as required by the preregistration.**
+
+| Metric   | Protocol-induced flip   | Seed-noise baseline (this study)   | Seed-noise baseline (Roth 2026)   | Metric-choice flip (Roth 2026)   | Ratio to own baseline   |
+|:---------|:------------------------|:-----------------------------------|:----------------------------------|:---------------------------------|:------------------------|
+| ROC-AUC  | 53.0% (286/540)         | 9.6% (7830 pairs)                  | 10.4%                             | 31.0%                            | 5.5x                    |
+| F1       | 58.3% (315/540)         | 21.4% (7830 pairs)                 | 10.4%                             | 31.0%                            | 2.7x                    |

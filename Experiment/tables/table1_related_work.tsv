@@ -1,0 +1,6 @@
+Study	Domain	Datasets	Metrics reported	Test set in 'incorrect' arm	Decomposition?
+Vandewiele et al. (2021)	Preterm birth (EHG)	1 + synthetic	ROC-AUC (accuracy for 4 of 11 pre-split reproductions)	Contains synthetic rows	No
+Demircioglu (2024)	Radiomics	15 + synthetic	AUC, sens., spec., bal. acc., Brier	Affected by resampling	No
+Kabane (2024)	Credit-card fraud	1	Acc., prec., rec., F1 (AUC and MCC only in figures quoted from other studies)	Not stated (pre-split figures quoted from earlier studies)	No
+Roth (2026)	General tabular	777 (imbalanced subset of 2,047)	Delta AUC only	Split taken after oversampling; composition not reported	No
+This study	Credit risk / fraud	6 + controlled ladder	AUC, AUPRC, F1, acc., prec.	Four ordered states on shared folds (CON, LON, LMN, LMB)	Yes: three path-specific contributions summing exactly to the total

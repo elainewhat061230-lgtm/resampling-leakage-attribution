@@ -1,0 +1,48 @@
+# figure_numbers.log — 由 make_figures.py 现算，图注数字须与本文件一致（四状态设计）
+# 正文宽度 TEXTWIDTH = 6.889 in (496 pt)，实测自已发表 PDF
+
+## FIG A · 四状态分解，按数据集（SMOTE；跨模型与种子取均值；T = L + S + P）
+   F1      bank-marketing   L=+0.0280  S=+0.0509  P=+0.2395  T=+0.3183  （正文显示 T +0.318）
+   F1      credit-g         L=+0.0390  S=+0.0822  P=+0.0949  T=+0.2161  （正文显示 T +0.216）
+   ROC-AUC bank-marketing   L=+0.0120  S=+0.0261  P=-0.0000  T=+0.0381  （正文显示 T +0.038）
+   ROC-AUC credit-g         L=+0.0244  S=+0.0612  P=+0.0000  T=+0.0856  （正文显示 T +0.086）
+
+## FIG B · 构成随模型（SMOTE；跨数据集与种子取均值；份额 = 贡献 / T，带符号）
+   F1      LogReg        L=+0.0139  share=6.0%
+   F1      LogReg        S=+0.0249  share=10.8%
+   F1      LogReg        P=+0.1928  share=83.2%
+   F1      LogReg        T=+0.2316
+   F1      RandomForest  L=+0.0531  share=17.5%
+   F1      RandomForest  S=+0.1081  share=35.7%
+   F1      RandomForest  P=+0.1416  share=46.8%
+   F1      RandomForest  T=+0.3028
+   ROC-AUC LogReg        L=+0.0110  share=34.8%
+   ROC-AUC LogReg        S=+0.0205  share=65.2%
+   ROC-AUC LogReg        P=-0.0000  share=-0.0%
+   ROC-AUC LogReg        T=+0.0315
+   ROC-AUC RandomForest  L=+0.0255  share=27.7%
+   ROC-AUC RandomForest  S=+0.0668  share=72.3%
+   ROC-AUC RandomForest  P=-0.0000  share=-0.0%
+   ROC-AUC RandomForest  T=+0.0923
+
+## FIG D · 四状态路径：指标沿 CON → LON → LMN → LMB（SMOTE；跨数据集与种子取均值）
+   F1      LogReg        CON=0.5753  LON=0.5892  LMN=0.6142  LMB=0.8069
+   F1      RandomForest  CON=0.5799  LON=0.6330  LMN=0.7410  LMB=0.8827
+   ROC-AUC LogReg        CON=0.8433  LON=0.8542  LMN=0.8748  LMB=0.8748
+   ROC-AUC RandomForest  CON=0.8560  LON=0.8815  LMN=0.9483  LMB=0.9483
+
+## FIG E · 四状态设计示意（纯示意图，无数据数值）
+   （示意图：不含数据数值）
+
+## FIG F · 胜者分布（ROC-AUC，10 个 数据集×重采样器×种子 单元格；CON vs LMB）
+   LogReg        CON   0 (0.0%)  LMB   0 (0.0%)
+   DecisionTree  CON   0 (0.0%)  LMB   0 (0.0%)
+   RandomForest  CON  10 (100.0%)  LMB  10 (100.0%)
+   XGBoost       CON   0 (0.0%)  LMB   0 (0.0%)
+
+## 图尺寸（英寸 @ 300 dpi）
+   fig_decomposition_by_dataset     6.89 x 2.45 in
+   fig_composition_by_capacity      6.89 x 2.45 in
+   fig_state_path                   6.89 x 2.45 in
+   fig_four_state_design            6.89 x 3.55 in
+   fig_winner_shift                 4.13 x 2.35 in

@@ -1,0 +1,5 @@
+Model	Wins under correct protocol (B)	Wins under correct protocol (B), %	Wins under as-published protocol (A)	Wins under as-published protocol (A), %
+LogReg	63	11.7%	0	0.0%
+DecisionTree	1	0.2%	0	0.0%
+RandomForest	304	56.3%	105	19.4%
+XGBoost	172	31.9%	435	80.6%

@@ -1,0 +1,6 @@
+seed,fold,pre_fit_n,pre_fit_equals_Otr,n_features,n_tr,n_te,n_pos_tr,n_neg_tr,n_pos_te,n_neg_te,k_clean_raw,k_full,k_test,k_leak_raw,k_matched,trim_clean,trim_leak,n_train,n_pos_train_clean,n_pos_train_leak,train_match,batch_pred_maxdiff,lmn_lmb_weights_differ,w_pos_LMN,prev_CON,prev_LMN,prev_LMB,auc_P_abs,auc_reweight_maxabs,telescope_maxabs,tag,dataset,model,resampler,n_rows,prevalence_orig,ratio
+1,0,640,True,51,640,160,320,320,80,80,0,0,0,0,0,0,0,640,320,320,True,0.0,False,1.0,0.5,0.5,0.5,0.0,0.0,0.0,ladder-r2,bank-marketing,XGBoost,SMOTE,800,0.5,2
+1,1,640,True,51,640,160,320,320,80,80,0,0,0,0,0,0,0,640,320,320,True,0.0,False,1.0,0.5,0.5,0.5,0.0,0.0,0.0,ladder-r2,bank-marketing,XGBoost,SMOTE,800,0.5,2
+1,2,640,True,51,640,160,320,320,80,80,0,0,0,0,0,0,0,640,320,320,True,0.0,False,1.0,0.5,0.5,0.5,0.0,0.0,0.0,ladder-r2,bank-marketing,XGBoost,SMOTE,800,0.5,2
+1,3,640,True,51,640,160,320,320,80,80,0,0,0,0,0,0,0,640,320,320,True,0.0,False,1.0,0.5,0.5,0.5,0.0,0.0,0.0,ladder-r2,bank-marketing,XGBoost,SMOTE,800,0.5,2
+1,4,640,True,51,640,160,320,320,80,80,0,0,0,0,0,0,0,640,320,320,True,0.0,False,1.0,0.5,0.5,0.5,0.0,0.0,0.0,ladder-r2,bank-marketing,XGBoost,SMOTE,800,0.5,2

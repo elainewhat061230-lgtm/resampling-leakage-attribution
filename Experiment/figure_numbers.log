@@ -1,0 +1,198 @@
+# figure_numbers.log — 由 make_figures.py 现算，图注数字须与本文件一致（四状态设计）
+# 正文宽度 TEXTWIDTH = 6.889 in (496 pt)，实测自已发表 PDF
+
+## FIG A · 四状态分解，按数据集（SMOTE；跨模型与种子取均值；T = L + S + P）
+   F1      creditcard       L=+0.0419  S=-0.0008  P=+0.1843  T=+0.2254  （正文显示 T +0.225）
+   F1      bank-marketing   L=+0.0314  S=+0.0829  P=+0.2205  T=+0.3348  （正文显示 T +0.335）
+   F1      credit-default   L=+0.0326  S=+0.1106  P=+0.1455  T=+0.2887  （正文显示 T +0.289）
+   F1      adult            L=+0.0095  S=+0.0450  P=+0.1289  T=+0.1834  （正文显示 T +0.183）
+   F1      credit-g         L=+0.0378  S=+0.1078  P=+0.0933  T=+0.2388  （正文显示 T +0.239）
+   F1      pima             L=+0.0287  S=+0.0255  P=+0.0710  T=+0.1252  （正文显示 T +0.125）
+   ROC-AUC creditcard       L=+0.0227  S=+0.0007  P=+0.0000  T=+0.0234  （正文显示 T +0.023）
+   ROC-AUC bank-marketing   L=+0.0147  S=+0.0378  P=-0.0000  T=+0.0525  （正文显示 T +0.052）
+   ROC-AUC credit-default   L=+0.0362  S=+0.0766  P=+0.0000  T=+0.1128  （正文显示 T +0.113）
+   ROC-AUC adult            L=+0.0069  S=+0.0305  P=+0.0000  T=+0.0374  （正文显示 T +0.037）
+   ROC-AUC credit-g         L=+0.0247  S=+0.0804  P=+0.0000  T=+0.1051  （正文显示 T +0.105）
+   ROC-AUC pima             L=+0.0233  S=+0.0213  P=+0.0000  T=+0.0445  （正文显示 T +0.045）
+
+## FIG B · 构成随模型（SMOTE；跨数据集与种子取均值；份额 = 贡献 / T，带符号）
+   F1      LogReg        L=+0.0070  share=3.5%
+   F1      LogReg        S=+0.0113  share=5.6%
+   F1      LogReg        P=+0.1832  share=90.9%
+   F1      LogReg        T=+0.2015
+   F1      DecisionTree  L=+0.0287  share=10.9%
+   F1      DecisionTree  S=+0.0567  share=21.6%
+   F1      DecisionTree  P=+0.1773  share=67.5%
+   F1      DecisionTree  T=+0.2627
+   F1      RandomForest  L=+0.0458  share=20.8%
+   F1      RandomForest  S=+0.0659  share=29.9%
+   F1      RandomForest  P=+0.1088  share=49.3%
+   F1      RandomForest  T=+0.2205
+   F1      XGBoost       L=+0.0398  share=16.2%
+   F1      XGBoost       S=+0.1135  share=46.1%
+   F1      XGBoost       P=+0.0929  share=37.7%
+   F1      XGBoost       T=+0.2461
+   ROC-AUC LogReg        L=+0.0066  share=40.4%
+   ROC-AUC LogReg        S=+0.0098  share=59.6%
+   ROC-AUC LogReg        P=+0.0000  share=0.0%
+   ROC-AUC LogReg        T=+0.0165
+   ROC-AUC DecisionTree  L=+0.0277  share=36.2%
+   ROC-AUC DecisionTree  S=+0.0488  share=63.8%
+   ROC-AUC DecisionTree  P=+0.0000  share=0.0%
+   ROC-AUC DecisionTree  T=+0.0765
+   ROC-AUC RandomForest  L=+0.0285  share=39.4%
+   ROC-AUC RandomForest  S=+0.0438  share=60.6%
+   ROC-AUC RandomForest  P=+0.0000  share=0.0%
+   ROC-AUC RandomForest  T=+0.0723
+   ROC-AUC XGBoost       L=+0.0227  share=26.7%
+   ROC-AUC XGBoost       S=+0.0624  share=73.3%
+   ROC-AUC XGBoost       P=+0.0000  share=0.0%
+   ROC-AUC XGBoost       T=+0.0852
+
+## FIG C · 受控阶梯：L（训练侧泄漏）vs 不平衡度（ROC-AUC；10 种子均值）
+   creditcard       LogReg        rho=+1.000  1:1=+0.0000 1:3=+0.0060 1:7=+0.0078 1:15=+0.0085 1:63=+0.0098 1:255=+0.0109
+   creditcard       LogReg        相邻档最小Δ = +7.3e-04
+   creditcard       DecisionTree  rho=+1.000  1:1=+0.0000 1:3=+0.0147 1:7=+0.0241 1:15=+0.0353 1:63=+0.0482 1:255=+0.0657
+   creditcard       DecisionTree  相邻档最小Δ = +9.4e-03
+   creditcard       RandomForest  rho=+0.943  1:1=+0.0000 1:3=+0.0097 1:7=+0.0139 1:15=+0.0156 1:63=+0.0154 1:255=+0.0156
+   creditcard       RandomForest  相邻档最小Δ = -1.6e-04  ← 负档差
+   creditcard       XGBoost       rho=+1.000  1:1=+0.0000 1:3=+0.0117 1:7=+0.0155 1:15=+0.0168 1:63=+0.0188 1:255=+0.0218
+   creditcard       XGBoost       相邻档最小Δ = +1.3e-03
+   creditcard       1:1 平衡档 CON AUC 均值 = 0.9749 （面板标题显示 0.97）
+   creditcard       LogReg        全档 CON AUC 均值 = 0.9775 （正文显示 0.977）
+   creditcard       DecisionTree  全档 CON AUC 均值 = 0.9521 （正文显示 0.952）
+   creditcard       RandomForest  全档 CON AUC 均值 = 0.9828 （正文显示 0.983）
+   creditcard       XGBoost       全档 CON AUC 均值 = 0.9812 （正文显示 0.981）
+   bank-marketing   LogReg        rho=+1.000  1:1=+0.0000 1:3=+0.0110 1:7=+0.0139 1:15=+0.0157 1:63=+0.0164
+   bank-marketing   LogReg        相邻档最小Δ = +7.2e-04
+   bank-marketing   DecisionTree  rho=+1.000  1:1=+0.0000 1:3=+0.0170 1:7=+0.0360 1:15=+0.0620 1:63=+0.1182
+   bank-marketing   DecisionTree  相邻档最小Δ = +1.7e-02
+   bank-marketing   RandomForest  rho=+1.000  1:1=+0.0000 1:3=+0.0191 1:7=+0.0348 1:15=+0.0519 1:63=+0.0750
+   bank-marketing   RandomForest  相邻档最小Δ = +1.6e-02
+   bank-marketing   XGBoost       rho=+1.000  1:1=+0.0000 1:3=+0.0168 1:7=+0.0299 1:15=+0.0421 1:63=+0.0629
+   bank-marketing   XGBoost       相邻档最小Δ = +1.2e-02
+   bank-marketing   1:1 平衡档 CON AUC 均值 = 0.8841 （面板标题显示 0.88）
+   bank-marketing   LogReg        全档 CON AUC 均值 = 0.8957 （正文显示 0.896）
+   bank-marketing   DecisionTree  全档 CON AUC 均值 = 0.8305 （正文显示 0.831）
+   bank-marketing   RandomForest  全档 CON AUC 均值 = 0.9003 （正文显示 0.900）
+   bank-marketing   XGBoost       全档 CON AUC 均值 = 0.9040 （正文显示 0.904）
+
+## FIG D · 四状态路径：指标沿 CON → LON → LMN → LMB（SMOTE；跨数据集与种子取均值）
+   F1      LogReg        CON=0.5994  LON=0.6065  LMN=0.6177  LMB=0.8009
+   F1      DecisionTree  CON=0.5672  LON=0.5959  LMN=0.6526  LMB=0.8299
+   F1      RandomForest  CON=0.6571  LON=0.7029  LMN=0.7688  LMB=0.8776
+   F1      XGBoost       CON=0.6422  LON=0.6820  LMN=0.7955  LMB=0.8884
+   ROC-AUC LogReg        CON=0.8530  LON=0.8596  LMN=0.8694  LMB=0.8694
+   ROC-AUC DecisionTree  CON=0.8187  LON=0.8465  LMN=0.8953  LMB=0.8953
+   ROC-AUC RandomForest  CON=0.8658  LON=0.8943  LMN=0.9381  LMB=0.9381
+   ROC-AUC XGBoost       CON=0.8604  LON=0.8831  LMN=0.9455  LMB=0.9455
+
+## FIG E · 四状态设计示意（纯示意图，无数据数值）
+   （示意图：不含数据数值）
+
+## FIG F · 胜者分布（ROC-AUC，540 个 数据集×重采样器×种子 单元格；CON vs LMB）
+   LogReg        CON 66 (12.2%)  LMB 0 (0.0%)
+   DecisionTree  CON 0 (0.0%)  LMB 0 (0.0%)
+   RandomForest  CON 300 (55.6%)  LMB 107 (19.8%)
+   XGBoost       CON 174 (32.2%)  LMB 433 (80.2%)
+
+## 图尺寸（英寸 @ 300 dpi）
+   fig_decomposition_by_dataset     6.89 x 2.45 in
+   fig_composition_by_capacity      6.89 x 2.45 in
+   fig_ladder                       6.89 x 2.45 in
+   fig_state_path                   6.89 x 2.45 in
+   fig_four_state_design            6.89 x 3.55 in
+   fig_winner_shift                 4.13 x 2.35 in
+
+## RQ2′ · 协议选择是否改变最佳模型（CON vs LMB；四状态设计）
+   口径：精确并列的模型同为最佳；两协议有共同最佳模型即算一致；胜者分布中并列各记 1/k 胜
+
+### 指标 = AUC
+   协议翻转率（CON 胜者 vs LMB 胜者）= 53.5%  (289/540 个 数据集×重采样器×种子)
+   路径分步：CON→LON 翻转 43.9% (237/540)  CON→LMN 翻转 53.5% (289/540)
+   并列第一（精确相等）：0 组比较、共 0 个（组 × 状态）
+   【自测】种子噪声基线（同在 CON，换种子）= 8.6%  (7830 个种子对)
+   Roth (2026) 种子噪声 winner-flip = 10.4%；指标选择 flip = 31.0%
+   → 协议翻转率是自测种子基线的 6.3 倍
+   逐数据集：
+     adult            协议翻转   0.0%   种子基线   0.0%   CON 第一二名差 中位=0.0120
+     bank-marketing   协议翻转   0.0%   种子基线   0.0%   CON 第一二名差 中位=0.0060
+     credit-default   协议翻转  66.7%   种子基线   0.0%   CON 第一二名差 中位=0.0086
+     credit-g         协议翻转  78.9%   种子基线   2.2%   CON 第一二名差 中位=0.0111
+     creditcard       协议翻转  80.0%   种子基线  13.1%   CON 第一二名差 中位=0.0029
+     pima             协议翻转  95.6%   种子基线  36.0%   CON 第一二名差 中位=0.0039
+   按 CON 第一二名差分组的翻转率：
+     Q1(最扎堆)      差中位=0.0022  翻转率  68.1%  (n=135)
+     Q2           差中位=0.0057  翻转率  50.4%  (n=135)
+     Q3           差中位=0.0086  翻转率  65.9%  (n=135)
+     Q4(最分散)      差中位=0.0123  翻转率  29.6%  (n=135)
+   CON 胜者分布：LogReg=66 DecisionTree=0 RandomForest=300 XGBoost=174
+   LON 胜者分布：LogReg=0 DecisionTree=0 RandomForest=318 XGBoost=222
+   LMN 胜者分布：LogReg=0 DecisionTree=0 RandomForest=107 XGBoost=433
+   LMB 胜者分布：LogReg=0 DecisionTree=0 RandomForest=107 XGBoost=433
+
+### 指标 = F1
+   协议翻转率（CON 胜者 vs LMB 胜者）= 58.9%  (318/540 个 数据集×重采样器×种子)
+   路径分步：CON→LON 翻转 31.3% (169/540)  CON→LMN 翻转 53.0% (286/540)
+   并列第一（精确相等）：1 组比较、共 3 个（组 × 状态）：creditcard/RandomOverSampler/seed19
+   【自测】种子噪声基线（同在 CON，换种子）= 21.6%  (7830 个种子对)
+   Roth (2026) 种子噪声 winner-flip = 10.4%；指标选择 flip = 31.0%
+   → 协议翻转率是自测种子基线的 2.7 倍
+   逐数据集：
+     adult            协议翻转   0.0%   种子基线   0.0%   CON 第一二名差 中位=0.0207
+     bank-marketing   协议翻转  50.0%   种子基线  40.2%   CON 第一二名差 中位=0.0036
+     credit-default   协议翻转  66.7%   种子基线   0.0%   CON 第一二名差 中位=0.0279
+     credit-g         协议翻转  95.6%   种子基线  27.6%   CON 第一二名差 中位=0.0161
+     creditcard       协议翻转  51.1%   种子基线  16.9%   CON 第一二名差 中位=0.0167
+     pima             协议翻转  90.0%   种子基线  44.8%   CON 第一二名差 中位=0.0102
+   按 CON 第一二名差分组的翻转率：
+     Q1(最扎堆)      差中位=0.0024  翻转率  63.7%  (n=135)
+     Q2           差中位=0.0103  翻转率  57.8%  (n=135)
+     Q3           差中位=0.0196  翻转率  39.3%  (n=135)
+     Q4(最分散)      差中位=0.0293  翻转率  74.8%  (n=135)
+
+## TABLES · 由 make_tables.py 现算（四状态设计）
+   TAB3 F1      LogReg        CON=0.5994  L=+0.0070  S=+0.0113  P=+0.1832  T=+0.2015  shares L/S/P=3.5/5.6/90.9%
+   TAB3 F1      DecisionTree  CON=0.5672  L=+0.0287  S=+0.0567  P=+0.1773  T=+0.2627  shares L/S/P=10.9/21.6/67.5%
+   TAB3 F1      RandomForest  CON=0.6571  L=+0.0458  S=+0.0659  P=+0.1088  T=+0.2205  shares L/S/P=20.8/29.9/49.3%
+   TAB3 F1      XGBoost       CON=0.6422  L=+0.0398  S=+0.1135  P=+0.0929  T=+0.2461  shares L/S/P=16.2/46.1/37.7%
+   TAB3 ROC-AUC LogReg        CON=0.8530  L=+0.0066  S=+0.0098  P=+0.0000  T=+0.0165  shares L/S/P=40.4/59.6/0.0%
+   TAB3 ROC-AUC DecisionTree  CON=0.8187  L=+0.0277  S=+0.0488  P=+0.0000  T=+0.0765  shares L/S/P=36.2/63.8/0.0%
+   TAB3 ROC-AUC RandomForest  CON=0.8658  L=+0.0285  S=+0.0438  P=+0.0000  T=+0.0723  shares L/S/P=39.4/60.6/0.0%
+   TAB3 ROC-AUC XGBoost       CON=0.8604  L=+0.0227  S=+0.0624  P=+0.0000  T=+0.0852  shares L/S/P=26.7/73.3/0.0%
+   TAB4 ROC-AUC  flip=0.535  own_base=0.086  ratio=6.25  flip_LON=0.439  flip_LMN=0.535
+   TAB4 F1       flip=0.589  own_base=0.216  ratio=2.73  flip_LON=0.313  flip_LMN=0.530
+   TAB4b LogReg        CON 66 (12.2%)  LMB 0 (0.0%)
+   TAB4b DecisionTree  CON 0 (0.0%)  LMB 0 (0.0%)
+   TAB4b RandomForest  CON 300 (55.6%)  LMB 107 (19.8%)
+   TAB4b XGBoost       CON 174 (32.2%)  LMB 433 (80.2%)
+   TAB5 ROC-AUC   Linear (LogReg)      T=+0.0165 [+0.0064..+0.0498]  L=+0.0066  S=+0.0098  P=+0.0000
+   TAB5 ROC-AUC   Flexible (DT/RF/XGB) T=+0.0780 [+0.0271..+0.1482]  L=+0.0263  S=+0.0517  P=+0.0000
+   TAB5 AUPRC     Linear (LogReg)      T=+0.1877 [+0.0949..+0.3431]  L=+0.0072  S=+0.0023  P=+0.1781
+   TAB5 AUPRC     Flexible (DT/RF/XGB) T=+0.2719 [+0.1475..+0.4209]  L=+0.0492  S=+0.1284  P=+0.0944
+   TAB5 F1        Linear (LogReg)      T=+0.2015 [+0.0762..+0.3116]  L=+0.0070  S=+0.0113  P=+0.1832
+   TAB5 F1        Flexible (DT/RF/XGB) T=+0.2431 [+0.1415..+0.3484]  L=+0.0381  S=+0.0787  P=+0.1264
+   TAB5 Accuracy  Linear (LogReg)      T=+0.0048 [-0.0285..+0.0404]  L=+0.0031  S=+0.0048  P=-0.0031
+   TAB5 Accuracy  Flexible (DT/RF/XGB) T=+0.0405 [+0.0017..+0.0711]  L=+0.0091  S=+0.0297  P=+0.0017
+   TAB5 Precision Linear (LogReg)      T=+0.3039 [+0.1328..+0.4887]  L=+0.0041  S=+0.0066  P=+0.2932
+   TAB5 Precision Flexible (DT/RF/XGB) T=+0.2670 [+0.1560..+0.3926]  L=+0.0131  S=+0.0417  P=+0.2122
+
+## RQ5（探索性）· 性能同档模型之间的 top-5 特征重要性一致性
+   样本：360 个模型对 × 数据集 × 种子（6 数据集 × 10 种子 × 6 对）
+   全体 Jaccard 中位 = 0.429   Kendall tau 中位 = 0.384   top-1 相同比例 = 82.2%
+   其中 **性能同档**（|AUC 差| < 0.003）的 30 对：Jaccard 中位 = 0.429  top-1 相同 = 56.7%
+   性能不同档的 330 对：Jaccard 中位 = 0.429  top-1 相同 = 84.5%
+   逐数据集（全部对）：
+     adult            Jaccard 中位=0.667  top-1 相同=50%  AUC 差中位=0.0195
+     bank-marketing   Jaccard 中位=0.429  top-1 相同=100%  AUC 差中位=0.0222
+     credit-default   Jaccard 中位=0.429  top-1 相同=100%  AUC 差中位=0.0424
+     credit-g         Jaccard 中位=0.429  top-1 相同=90%  AUC 差中位=0.0360
+     creditcard       Jaccard 中位=0.429  top-1 相同=53%  AUC 差中位=0.0109
+     pima             Jaccard 中位=0.667  top-1 相同=100%  AUC 差中位=0.0294
+   逐模型对（全部数据集）：
+     DecisionTree  vs RandomForest  Jaccard 中位=0.429  top-1 相同=73%
+     DecisionTree  vs XGBoost       Jaccard 中位=0.429  top-1 相同=88%
+     LogReg        vs DecisionTree  Jaccard 中位=0.429  top-1 相同=85%
+     LogReg        vs RandomForest  Jaccard 中位=0.429  top-1 相同=75%
+     LogReg        vs XGBoost       Jaccard 中位=0.429  top-1 相同=95%
+     RandomForest  vs XGBoost       Jaccard 中位=0.667  top-1 相同=77%

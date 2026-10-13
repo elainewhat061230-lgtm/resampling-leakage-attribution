@@ -1,0 +1,206 @@
+# figure_numbers.log — 由 make_figures.py 现算，图注数字须与本文件一致
+# 正文宽度 TEXTWIDTH = 6.889 in (496 pt)，实测自已发表 PDF
+
+## FIG A · 三机制分解，按数据集（SMOTE，跨模型与种子取中位）
+   F1   creditcard       m1_prevalence        +0.1676
+   F1   bank-marketing   m1_prevalence        +0.2021
+   F1   credit-default   m1_prevalence        +0.1245
+   F1   adult            m1_prevalence        +0.1249
+   F1   credit-g         m1_prevalence        +0.0762
+   F1   pima             m1_prevalence        +0.0667
+   F1   creditcard       m2_synthetic_rows    -0.0001
+   F1   bank-marketing   m2_synthetic_rows    +0.0916
+   F1   credit-default   m2_synthetic_rows    +0.1415
+   F1   adult            m2_synthetic_rows    +0.0702
+   F1   credit-g         m2_synthetic_rows    +0.2019
+   F1   pima             m2_synthetic_rows    +0.0551
+   F1   creditcard       m3_true_leakage      +0.0544
+   F1   bank-marketing   m3_true_leakage      +0.0384
+   F1   credit-default   m3_true_leakage      +0.0301
+   F1   adult            m3_true_leakage      +0.0093
+   F1   credit-g         m3_true_leakage      +0.0390
+   F1   pima             m3_true_leakage      +0.0239
+   F1   creditcard       observed_total       +0.2185  (堆叠和 +0.2218，差 +0.0033；正文显示 +0.219 vs +0.222)
+   F1   bank-marketing   observed_total       +0.3451  (堆叠和 +0.3322，差 -0.0130；正文显示 +0.345 vs +0.332)
+   F1   credit-default   observed_total       +0.3012  (堆叠和 +0.2961，差 -0.0051；正文显示 +0.301 vs +0.296)
+   F1   adult            observed_total       +0.1881  (堆叠和 +0.2044，差 +0.0163；正文显示 +0.188 vs +0.204)
+   F1   credit-g         observed_total       +0.2537  (堆叠和 +0.3171，差 +0.0634；正文显示 +0.254 vs +0.317)
+   F1   pima             observed_total       +0.1238  (堆叠和 +0.1457，差 +0.0219；正文显示 +0.124 vs +0.146)
+   ROC-AUC creditcard       m1_prevalence        -0.0000
+   ROC-AUC bank-marketing   m1_prevalence        +0.0000
+   ROC-AUC credit-default   m1_prevalence        +0.0000
+   ROC-AUC adult            m1_prevalence        -0.0000
+   ROC-AUC credit-g         m1_prevalence        -0.0000
+   ROC-AUC pima             m1_prevalence        +0.0000
+   ROC-AUC creditcard       m2_synthetic_rows    +0.0000
+   ROC-AUC bank-marketing   m2_synthetic_rows    +0.0497
+   ROC-AUC credit-default   m2_synthetic_rows    +0.1100
+   ROC-AUC adult            m2_synthetic_rows    +0.0519
+   ROC-AUC credit-g         m2_synthetic_rows    +0.1606
+   ROC-AUC pima             m2_synthetic_rows    +0.0523
+   ROC-AUC creditcard       m3_true_leakage      +0.0181
+   ROC-AUC bank-marketing   m3_true_leakage      +0.0163
+   ROC-AUC credit-default   m3_true_leakage      +0.0349
+   ROC-AUC adult            m3_true_leakage      +0.0065
+   ROC-AUC credit-g         m3_true_leakage      +0.0262
+   ROC-AUC pima             m3_true_leakage      +0.0216
+   ROC-AUC creditcard       observed_total       +0.0181  (堆叠和 +0.0181，差 +0.0000；正文显示 +0.018 vs +0.018)
+   ROC-AUC bank-marketing   observed_total       +0.0610  (堆叠和 +0.0660，差 +0.0050；正文显示 +0.061 vs +0.066)
+   ROC-AUC credit-default   observed_total       +0.1404  (堆叠和 +0.1449，差 +0.0045；正文显示 +0.140 vs +0.145)
+   ROC-AUC adult            observed_total       +0.0442  (堆叠和 +0.0584，差 +0.0142；正文显示 +0.044 vs +0.058)
+   ROC-AUC credit-g         observed_total       +0.1197  (堆叠和 +0.1869，差 +0.0672；正文显示 +0.120 vs +0.187)
+   ROC-AUC pima             observed_total       +0.0456  (堆叠和 +0.0739，差 +0.0282；正文显示 +0.046 vs +0.074)
+
+## FIG B · 机制构成占比 × 模型容量（SMOTE，跨数据集与种子取中位）
+   F1   LogReg        m1_prevalence        median=+0.1675 share=92.6%
+   F1   DecisionTree  m1_prevalence        median=+0.1326 share=55.3%
+   F1   RandomForest  m1_prevalence        median=+0.0874 share=38.9%
+   F1   XGBoost       m1_prevalence        median=+0.0696 share=27.0%
+   F1   LogReg        m2_synthetic_rows    median=+0.0102 share=5.6%
+   F1   DecisionTree  m2_synthetic_rows    median=+0.0809 share=33.8%
+   F1   RandomForest  m2_synthetic_rows    median=+0.0850 share=37.8%
+   F1   XGBoost       m2_synthetic_rows    median=+0.1467 share=56.9%
+   F1   LogReg        m3_true_leakage      median=+0.0032 share=1.8%
+   F1   DecisionTree  m3_true_leakage      median=+0.0261 share=10.9%
+   F1   RandomForest  m3_true_leakage      median=+0.0521 share=23.2%
+   F1   XGBoost       m3_true_leakage      median=+0.0416 share=16.1%
+   ROC-AUC LogReg        m1_prevalence        median=-0.0000 share=0.0%
+   ROC-AUC DecisionTree  m1_prevalence        median=+0.0000 share=0.0%
+   ROC-AUC RandomForest  m1_prevalence        median=-0.0000 share=0.0%
+   ROC-AUC XGBoost       m1_prevalence        median=-0.0000 share=0.0%
+   ROC-AUC LogReg        m2_synthetic_rows    median=+0.0099 share=76.6%
+   ROC-AUC DecisionTree  m2_synthetic_rows    median=+0.0596 share=69.3%
+   ROC-AUC RandomForest  m2_synthetic_rows    median=+0.0482 share=69.2%
+   ROC-AUC XGBoost       m2_synthetic_rows    median=+0.0655 share=75.5%
+   ROC-AUC LogReg        m3_true_leakage      median=+0.0030 share=23.4%
+   ROC-AUC DecisionTree  m3_true_leakage      median=+0.0264 share=30.7%
+   ROC-AUC RandomForest  m3_true_leakage      median=+0.0215 share=30.8%
+   ROC-AUC XGBoost       m3_true_leakage      median=+0.0213 share=24.5%
+
+## FIG C · 受控阶梯：③真泄漏 vs 不平衡度（AUC）
+   creditcard       LogReg        rho=+0.943  1:1=+0.0000 1:3=+0.0053 1:7=+0.0084 1:15=+0.0084 1:63=+0.0098 1:255=+0.0104
+   creditcard       LogReg        相邻档最小Δ = -5.8e-05  ← 负档差（该曲线非单调不减）
+   creditcard       DecisionTree  rho=+1.000  1:1=+0.0000 1:3=+0.0144 1:7=+0.0258 1:15=+0.0355 1:63=+0.0446 1:255=+0.0646
+   creditcard       DecisionTree  相邻档最小Δ = +9.1e-03
+   creditcard       RandomForest  rho=+1.000  1:1=+0.0000 1:3=+0.0096 1:7=+0.0134 1:15=+0.0149 1:63=+0.0157 1:255=+0.0159
+   creditcard       RandomForest  相邻档最小Δ = +2.1e-04
+   creditcard       XGBoost       rho=+1.000  1:1=+0.0000 1:3=+0.0121 1:7=+0.0147 1:15=+0.0170 1:63=+0.0186 1:255=+0.0214
+   creditcard       XGBoost       相邻档最小Δ = +1.5e-03
+   creditcard       1:1 平衡档基线 AUC(B) 中位 = 0.9772 （面板标题显示 0.98）
+   creditcard       LogReg        全档 B 臂 AUC 中位 = 0.9775 （正文显示 0.977）
+   creditcard       DecisionTree  全档 B 臂 AUC 中位 = 0.9543 （正文显示 0.954）
+   creditcard       RandomForest  全档 B 臂 AUC 中位 = 0.9836 （正文显示 0.984）
+   creditcard       XGBoost       全档 B 臂 AUC 中位 = 0.9816 （正文显示 0.982）
+   bank-marketing   LogReg        rho=+1.000  1:1=+0.0000 1:3=+0.0107 1:7=+0.0141 1:15=+0.0153 1:63=+0.0162
+   bank-marketing   LogReg        相邻档最小Δ = +9.4e-04
+   bank-marketing   DecisionTree  rho=+1.000  1:1=+0.0000 1:3=+0.0173 1:7=+0.0335 1:15=+0.0547 1:63=+0.1205
+   bank-marketing   DecisionTree  相邻档最小Δ = +1.6e-02
+   bank-marketing   RandomForest  rho=+1.000  1:1=+0.0000 1:3=+0.0205 1:7=+0.0363 1:15=+0.0518 1:63=+0.0751
+   bank-marketing   RandomForest  相邻档最小Δ = +1.6e-02
+   bank-marketing   XGBoost       rho=+1.000  1:1=+0.0000 1:3=+0.0184 1:7=+0.0291 1:15=+0.0408 1:63=+0.0657
+   bank-marketing   XGBoost       相邻档最小Δ = +1.1e-02
+   bank-marketing   1:1 平衡档基线 AUC(B) 中位 = 0.8937 （面板标题显示 0.89）
+   bank-marketing   LogReg        全档 B 臂 AUC 中位 = 0.8955 （正文显示 0.895）
+   bank-marketing   DecisionTree  全档 B 臂 AUC 中位 = 0.8410 （正文显示 0.841）
+   bank-marketing   RandomForest  全档 B 臂 AUC 中位 = 0.9002 （正文显示 0.900）
+   bank-marketing   XGBoost       全档 B 臂 AUC 中位 = 0.9038 （正文显示 0.904）
+
+## FIG D · 可加性：机制之和 vs 观测总差
+   F1   可加性缺口 中位=-0.0103  p10=-0.0585  p90=+0.0130  |缺口|>0.01 占 63.1%
+   ROC-AUC 可加性缺口 中位=-0.0150  p10=-0.0671  p90=+0.0000  |缺口|>0.01 占 55.0%
+
+## FIG E · 五臂设计示意（纯示意图，无数据数值）
+   （示意图：不含数据数值；C2 = 与 D 等量等流行率的 C 下采样版）
+
+## FIG F · 胜者分布（ROC-AUC，540 个 数据集×重采样器×种子 单元格）
+   LogReg        B  63 (11.7%)  A   0 (0.0%)
+   DecisionTree  B   1 (0.2%)  A   0 (0.0%)
+   RandomForest  B 304 (56.3%)  A 105 (19.4%)
+   XGBoost       B 172 (31.9%)  A 435 (80.6%)
+
+## 图尺寸（英寸 @ 300 dpi）
+   fig_decomposition_by_dataset     6.89 x 2.45 in
+   fig_composition_by_capacity      6.89 x 2.45 in
+   fig_ladder                       6.89 x 2.45 in
+   fig_additivity                   6.89 x 2.45 in
+   fig_five_arm_design              6.89 x 3.30 in
+   fig_winner_shift                 4.13 x 2.35 in
+
+## RQ2′ · 协议选择是否改变最佳模型（预注册 §7）
+
+### 指标 = AUC
+   协议翻转率（B 臂胜者 vs A 臂胜者）= 53.0%  (286/540 个 数据集×重采样器×种子)
+   【自测】种子噪声基线（同在 B 臂，换种子）= 9.6%  (7830 个种子对)
+   Roth (2026) 种子噪声 winner-flip = 10.4%
+   Roth (2026) 指标选择 flip       = 31.0%
+   → 协议翻转率是自测种子基线的 5.5 倍
+   逐数据集：
+     adult            协议翻转   0.0%   种子基线   0.0%   B臂第一二名差 中位=0.0120
+     bank-marketing   协议翻转   0.0%   种子基线   0.0%   B臂第一二名差 中位=0.0059
+     credit-default   协议翻转  66.7%   种子基线   0.0%   B臂第一二名差 中位=0.0084
+     credit-g         协议翻转  77.8%   种子基线   0.0%   B臂第一二名差 中位=0.0110
+     creditcard       协议翻转  76.7%   种子基线  14.6%   B臂第一二名差 中位=0.0031
+     pima             协议翻转  96.7%   种子基线  43.1%   B臂第一二名差 中位=0.0038
+   按 B 臂第一二名差分组的翻转率：
+     Q1(最扎堆)      差中位=0.0021  翻转率  62.2%  (n=135)
+     Q2           差中位=0.0058  翻转率  50.4%  (n=135)
+     Q3           差中位=0.0088  翻转率  65.2%  (n=135)
+     Q4(最分散)      差中位=0.0121  翻转率  34.1%  (n=135)
+   A 臂胜者分布：{'XGBoost': np.int64(435), 'RandomForest': np.int64(105)}
+   B 臂胜者分布：{'RandomForest': np.int64(304), 'XGBoost': np.int64(172), 'LogReg': np.int64(63), 'DecisionTree': np.int64(1)}
+
+### 指标 = F1
+   协议翻转率（B 臂胜者 vs A 臂胜者）= 58.3%  (315/540 个 数据集×重采样器×种子)
+   【自测】种子噪声基线（同在 B 臂，换种子）= 21.4%  (7830 个种子对)
+   Roth (2026) 种子噪声 winner-flip = 10.4%
+   Roth (2026) 指标选择 flip       = 31.0%
+   → 协议翻转率是自测种子基线的 2.7 倍
+   逐数据集：
+     adult            协议翻转   0.0%   种子基线   0.0%   B臂第一二名差 中位=0.0202
+     bank-marketing   协议翻转  47.8%   种子基线  43.6%   B臂第一二名差 中位=0.0035
+     credit-default   协议翻转  66.7%   种子基线   0.0%   B臂第一二名差 中位=0.0256
+     credit-g         协议翻转  98.9%   种子基线  21.5%   B臂第一二名差 中位=0.0152
+     creditcard       协议翻转  46.7%   种子基线  16.9%   B臂第一二名差 中位=0.0184
+     pima             协议翻转  90.0%   种子基线  46.2%   B臂第一二名差 中位=0.0106
+   按 B 臂第一二名差分组的翻转率：
+     Q1(最扎堆)      差中位=0.0023  翻转率  61.5%  (n=135)
+     Q2           差中位=0.0103  翻转率  62.2%  (n=135)
+     Q3           差中位=0.0195  翻转率  41.5%  (n=135)
+     Q4(最分散)      差中位=0.0279  翻转率  68.1%  (n=135)
+
+## TABLES · 由 make_tables.py 现算
+   TAB3 F1   LogReg        m1_pre=+0.1675  m2_syn=+0.0102  m3_tru=+0.0032
+   TAB3 F1   DecisionTree  m1_pre=+0.1326  m2_syn=+0.0809  m3_tru=+0.0261
+   TAB3 F1   RandomForest  m1_pre=+0.0874  m2_syn=+0.0850  m3_tru=+0.0521
+   TAB3 F1   XGBoost       m1_pre=+0.0696  m2_syn=+0.1467  m3_tru=+0.0416
+   TAB3 ROC-AUC LogReg        m1_pre=-0.0000  m2_syn=+0.0099  m3_tru=+0.0030
+   TAB3 ROC-AUC DecisionTree  m1_pre=+0.0000  m2_syn=+0.0596  m3_tru=+0.0264
+   TAB3 ROC-AUC RandomForest  m1_pre=-0.0000  m2_syn=+0.0482  m3_tru=+0.0215
+   TAB3 ROC-AUC XGBoost       m1_pre=-0.0000  m2_syn=+0.0655  m3_tru=+0.0213
+   TAB4 ROC-AUC  flip=0.530  own_base=0.096  ratio=5.50
+   TAB4 F1       flip=0.583  own_base=0.214  ratio=2.73
+   TAB4b n_cells=540  B-winners={'RandomForest': np.int64(304), 'XGBoost': np.int64(172), 'LogReg': np.int64(63), 'DecisionTree': np.int64(1)}  A-winners={'XGBoost': np.int64(435), 'RandomForest': np.int64(105)}
+   TAB4b LogReg        B  63 (11.7%)  A   0 (0.0%)
+   TAB4b DecisionTree  B   1 (0.2%)  A   0 (0.0%)
+   TAB4b RandomForest  B 304 (56.3%)  A 105 (19.4%)
+   TAB4b XGBoost       B 172 (31.9%)  A 435 (80.6%)
+
+## RQ5（探索性）· 性能同档模型之间的 top-5 特征重要性一致性
+   样本：360 个模型对 × 数据集 × 种子（6 数据集 × 10 种子 × 6 对）
+   全体 Jaccard 中位 = 0.429   Kendall tau 中位 = 0.382   top-1 相同比例 = 84.4%
+   其中 **性能同档**（|AUC 差| < 0.003）的 29 对：Jaccard 中位 = 0.429  top-1 相同 = 58.6%
+   性能不同档的 331 对：Jaccard 中位 = 0.429  top-1 相同 = 86.7%
+   逐数据集（全部对）：
+     adult            Jaccard 中位=0.667  top-1 相同=50%  AUC 差中位=0.0189
+     bank-marketing   Jaccard 中位=0.429  top-1 相同=100%  AUC 差中位=0.0224
+     credit-default   Jaccard 中位=0.429  top-1 相同=100%  AUC 差中位=0.0425
+     credit-g         Jaccard 中位=0.429  top-1 相同=90%  AUC 差中位=0.0360
+     creditcard       Jaccard 中位=0.429  top-1 相同=67%  AUC 差中位=0.0115
+     pima             Jaccard 中位=0.667  top-1 相同=100%  AUC 差中位=0.0340
+   逐模型对（全部数据集）：
+     DecisionTree  vs RandomForest  Jaccard 中位=0.429  top-1 相同=77%
+     DecisionTree  vs XGBoost       Jaccard 中位=0.667  top-1 相同=90%
+     LogReg        vs DecisionTree  Jaccard 中位=0.429  top-1 相同=90%
+     LogReg        vs RandomForest  Jaccard 中位=0.429  top-1 相同=77%
+     LogReg        vs XGBoost       Jaccard 中位=0.429  top-1 相同=97%
+     RandomForest  vs XGBoost       Jaccard 中位=0.667  top-1 相同=77%
